@@ -15,7 +15,9 @@ removeDays = [] # If you don't want to include some days in the count, like '6 -
 
 # Code:
 title = "     myCalendar" # I recommend you using spaces to center if you want to make it look better
+dayNameSet = "Mo Tu We Th Fr Sa Su" # If you want to change the day characters
 allRemoveDays = []
+dayName = "Mo Tu We Th Fr Sa Su"
 monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 for i in range(1, 5):
     for day in removeDays:
@@ -28,6 +30,7 @@ for i in range(1, 5):
 print(f"Removed days: {allRemoveDays}\n")
 calString = cl.month(yyyy, mm)
 calString = calString.replace(f"    {cl.month_name[mm]} {yyyy}", f"{title}")
+calString = calString.replace(f"{dayName}", f"{dayNameSet}")
 
 for i in range(start, end + 1, skip):
     if i not in allRemoveDays:
